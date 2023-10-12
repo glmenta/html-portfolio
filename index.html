@@ -11,6 +11,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.school-logo {
+				width: 150px;
+				height: auto;
+			}
+			.project-logo {
+				width: 150px;
+				height: auto;
+			}
+			.company-logo {
+				width: 150px;
+				height: auto;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -47,8 +61,8 @@
 						<!-- Intro -->
 							<article id="intro">
 								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>A dedicated Full Stack Software Developer with experience in creating web applications using JavaScript, Reactjs, Nodejs, and various other innovative libraries and frameworks.</p>
+								<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
+								<p>I am a dedicated Full Stack Software Developer with experience in creating web applications using JavaScript, Reactjs, Nodejs, and various other innovative libraries and frameworks.</p>
 								<ul class="icons">
 									<h3>Technologies I Use</h3>
 									<li><span class="icon brands fa-html5"><span class="label">HTML5</span></span></li>
@@ -59,16 +73,18 @@
 									<li><span class="icon brands fa-node"><span class="label">Node</span></span></li>
 									<li><span class="icon brands fa-npm"><span class="label">Npm</span></span></li>
 									<li><span class="icon brands fa-aws"><span class="label">AWS</span></span></li>
-									<li><span class="icon brands fa-aws"><span class="label">AWS</span></span></li>
 								</ul>
-								<div id="education-content"></div>
+
+								<div id="education-content">
+									<h3>Education</h3>
+								</div>
 								<script>
 									const educationInfo = {
 										display: true,
 										schools: [
 											{
 												schoolName: "UC Davis",
-												// logo: "./images/ucdavislogo.png", // Changed to relative path
+												logo: "./images/ucdavislogo.png", // Changed to relative path
 												subHeader: "Bachelor of Science in Neurology, Physiology and Behavior",
 												duration: "September 2016 - June 2021",
 												desc: "Utilized advanced laboratory equipment and techniques for experiments, data collection, and analysis.",
@@ -79,7 +95,7 @@
 											},
 											{
 												schoolName: "App Academy",
-												logo: "./assets/images/Appacademylogo.png", // Changed to relative path
+												logo: "./images/Appacademylogo.png", // Changed to relative path
 												subHeader: "Full-Stack Web Development",
 												duration: "August 2022 - August 2023",
 												desc: "Completed an immersive online software engineering bootcamp, acquiring practical skills in coding, web development, and app creation.",
@@ -98,8 +114,8 @@
 										educationInfo.schools.forEach(school => {
 											const schoolElement = document.createElement('div');
 											schoolElement.innerHTML = `
-												<h3>${school.schoolName}</h3>
-												<img src="${school.logo}" alt="${school.schoolName} Logo" />
+												<h4>${school.schoolName}</h4>
+												<img src="${school.logo}" alt="${school.schoolName} Logo" class="school-logo"/>
 												<p><strong>${school.subHeader}</strong><br>${school.duration}</p>
 												<p>${school.desc}</p>
 												<ul>
@@ -116,7 +132,7 @@
 				<!-- Work -->
 				<article id="work">
 					<h2 class="major">Projects</h2>
-					<div id="projects-content"></div> <!-- This div will contain the dynamically added projects -->
+					<div id="projects-content"></div>
 				</article>
 
 				<script>
@@ -124,7 +140,7 @@
 						{
 							title: "AnimeBnb",
 							subtitle: "Developed a full-stack web application that emulates the core functionality of AirBnb.",
-							image: "./assets/images/animebnbfavico.ico", // Changed to relative path
+							image: "./images/animebnbfavico.ico", // Changed to relative path
 							imageAlt: "AnimeBnb Logo",
 							footerLink: [
 								{ name: "View my Airbnb clone in Action", url: "https://airbnb-project-92yx.onrender.com" }
@@ -133,7 +149,7 @@
 						{
 							title: "Soundcloud Clone",
 							subtitle: "Developed a full-stack application alongside a group of web developers using React, AWS and Flask that allows for users to create, edit and share songs and playlists.",
-							image: "./assets/images/soundcloudIcon.png", // Changed to relative path
+							image: "./images/soundcloudIcon.png", // Changed to relative path
 							imageAlt: "Soundcloud Clone Logo",
 							footerLink: [
 								{ name: "View our Soundcloud clone in Action", url: "https://soundcloudclone.onrender.com/" }
@@ -142,7 +158,7 @@
 						{
 							title: "KeebCraft",
 							subtitle: "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-							image: "./assets/images/keebcraft.ico", // Changed to relative path
+							image: "./images/keebcraft.ico", // Changed to relative path
 							imageAlt: "KeebCraft Logo",
 							footerLink: [
 								{ name: "View KeebCraft in Action", url: "https://keebcraft-capstone.onrender.com" }
@@ -154,10 +170,10 @@
 
 					achievementsCards.forEach(card => {
 						const cardElement = document.createElement('div');
-						cardElement.classList.add('project-card'); // You can style this class in your CSS
+						cardElement.classList.add('project-card');
 						cardElement.innerHTML = `
 							<h3>${card.title}</h3>
-							<img src="${card.image}" alt="${card.imageAlt}" />
+							<img src="${card.image}" alt="${card.imageAlt}" class="project-logo"/>
 							<p>${card.subtitle}</p>
 							${card.footerLink.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('')}
 						`;
@@ -179,7 +195,7 @@
 										{
 											role: "Physical Therapy Aide",
 											company: "Movement For Life",
-											companylogo: "./assets/images/movementforlifelogo.png", // Changed to relative path
+											companylogo: "./images/movementforlifelogo.png",
 											date: "August 2021 – September 2022",
 											desc: "Assisted in guiding patients through specific exercises and routines designed for their recovery.",
 											descBullets: [
@@ -190,7 +206,7 @@
 										{
 											role: "Food Staff",
 											company: "Fish's Wild Island Grill",
-											companylogo: "./assets/images/fishswildlogo.png", // Changed to relative path
+											companylogo: "./images/fishswildlogo.png",
 											date: "August 2019 – March 2020",
 											desc: "Enhanced multitasking abilities, managing multiple orders and customer requests efficiently.",
 											descBullets: [
@@ -208,7 +224,7 @@
 										const expElement = document.createElement('div');
 										expElement.innerHTML = `
 											<h3>${exp.role} at ${exp.company}</h3>
-											<img src="${exp.companylogo}" alt="${exp.company} Logo" />
+											<img src="${exp.companylogo}" alt="${exp.company} Logo" class='company-logo'/>
 											<p><strong>${exp.date}</strong><br>${exp.desc}</p>
 											<ul>
 												${exp.descBullets.map(bullet => `<li>${bullet}</li>`).join('')}
@@ -223,30 +239,15 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
+								<h3>Contact Me ☎️</h3>
+								<p>Discuss a project or just want to say hi? Feel free to contact me via any of the platforms below!</p>
+								<p>Phone: 209-373-6411</p>
+								<p>Email: <a href="mailto:gakidogeck@gmail.com">gakidogeck@gmail.com</a></p>
+
 								<ul class="icons">
-									<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="#" class="icon brands fa-angellist"><span class="label">WellFound</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/geryko-menta-36a0b0215/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://wellfound.com/u/geryko-menta" class="icon brands fa-angellist"><span class="label">WellFound</span></a></li>
+									<li><a href="https://github.com/glmenta" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
 
