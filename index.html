@@ -33,8 +33,8 @@
 						<nav>
 							<ul>
 								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
+								<li><a href="#work">Projects</a></li>
+								<li><a href="#about">Work</a></li>
 								<li><a href="#contact">Contact</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
@@ -48,24 +48,177 @@
 							<article id="intro">
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+								<p>A dedicated Full Stack Software Developer with experience in creating web applications using JavaScript, Reactjs, Nodejs, and various other innovative libraries and frameworks.</p>
+								<ul class="icons">
+									<h3>Technologies I Use</h3>
+									<li><span class="icon brands fa-html5"><span class="label">HTML5</span></span></li>
+									<li><span class="icon brands fa-css3"><span class="label">CSS3</span></span></li>
+									<li><span class="icon brands fa-python"><span class="label">Python</span></span></li>
+									<li><span class="icon brands fa-js"><span class="label">JS</span></span></li>
+									<li><span class="icon brands fa-react"><span class="label">React</span></span></li>
+									<li><span class="icon brands fa-node"><span class="label">Node</span></span></li>
+									<li><span class="icon brands fa-npm"><span class="label">Npm</span></span></li>
+									<li><span class="icon brands fa-aws"><span class="label">AWS</span></span></li>
+									<li><span class="icon brands fa-aws"><span class="label">AWS</span></span></li>
+								</ul>
+								<div id="education-content"></div>
+								<script>
+									const educationInfo = {
+										display: true,
+										schools: [
+											{
+												schoolName: "UC Davis",
+												// logo: "./images/ucdavislogo.png", // Changed to relative path
+												subHeader: "Bachelor of Science in Neurology, Physiology and Behavior",
+												duration: "September 2016 - June 2021",
+												desc: "Utilized advanced laboratory equipment and techniques for experiments, data collection, and analysis.",
+												descBullets: [
+													"Engaged in rigorous coursework, enhancing critical thinking, problem-solving, and research skills.",
+													"Collaborated with fellow students and faculty on group projects and presentations, honing teamwork and communication abilities."
+												]
+											},
+											{
+												schoolName: "App Academy",
+												logo: "./assets/images/Appacademylogo.png", // Changed to relative path
+												subHeader: "Full-Stack Web Development",
+												duration: "August 2022 - August 2023",
+												desc: "Completed an immersive online software engineering bootcamp, acquiring practical skills in coding, web development, and app creation.",
+												descBullets: [
+													"Worked on real-world projects, demonstrating the ability to design, develop, and deploy functional web applications.",
+													"Collaborated with peers in a virtual environment, enhancing remote communication and collaboration skills.",
+													"Adapted to fast-paced learning, quickly grasping new concepts and technologies."
+												]
+											}
+										]
+									};
+
+									const educationContent = document.getElementById('education-content');
+
+									if (educationInfo.display) {
+										educationInfo.schools.forEach(school => {
+											const schoolElement = document.createElement('div');
+											schoolElement.innerHTML = `
+												<h3>${school.schoolName}</h3>
+												<img src="${school.logo}" alt="${school.schoolName} Logo" />
+												<p><strong>${school.subHeader}</strong><br>${school.duration}</p>
+												<p>${school.desc}</p>
+												<ul>
+													${school.descBullets.map(bullet => `<li>${bullet}</li>`).join('')}
+												</ul>
+											`;
+
+											educationContent.appendChild(schoolElement);
+										});
+									}
+								</script>
 							</article>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article>
+				<!-- Work -->
+				<article id="work">
+					<h2 class="major">Projects</h2>
+					<div id="projects-content"></div> <!-- This div will contain the dynamically added projects -->
+				</article>
 
-						<!-- About -->
+				<script>
+					const achievementsCards = [
+						{
+							title: "AnimeBnb",
+							subtitle: "Developed a full-stack web application that emulates the core functionality of AirBnb.",
+							image: "./assets/images/animebnbfavico.ico", // Changed to relative path
+							imageAlt: "AnimeBnb Logo",
+							footerLink: [
+								{ name: "View my Airbnb clone in Action", url: "https://airbnb-project-92yx.onrender.com" }
+							]
+						},
+						{
+							title: "Soundcloud Clone",
+							subtitle: "Developed a full-stack application alongside a group of web developers using React, AWS and Flask that allows for users to create, edit and share songs and playlists.",
+							image: "./assets/images/soundcloudIcon.png", // Changed to relative path
+							imageAlt: "Soundcloud Clone Logo",
+							footerLink: [
+								{ name: "View our Soundcloud clone in Action", url: "https://soundcloudclone.onrender.com/" }
+							]
+						},
+						{
+							title: "KeebCraft",
+							subtitle: "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
+							image: "./assets/images/keebcraft.ico", // Changed to relative path
+							imageAlt: "KeebCraft Logo",
+							footerLink: [
+								{ name: "View KeebCraft in Action", url: "https://keebcraft-capstone.onrender.com" }
+							]
+						}
+					];
+
+					const projectsContent = document.getElementById('projects-content');
+
+					achievementsCards.forEach(card => {
+						const cardElement = document.createElement('div');
+						cardElement.classList.add('project-card'); // You can style this class in your CSS
+						cardElement.innerHTML = `
+							<h3>${card.title}</h3>
+							<img src="${card.image}" alt="${card.imageAlt}" />
+							<p>${card.subtitle}</p>
+							${card.footerLink.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('')}
+						`;
+
+						projectsContent.appendChild(cardElement);
+					});
+				</script>
+
+
 							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<h2 class="major">Work Experiences</h2>
+								<div id="work-experiences-content"></div>
 							</article>
+
+							<script>
+								const workExperiences = {
+									display: true,
+									experience: [
+										{
+											role: "Physical Therapy Aide",
+											company: "Movement For Life",
+											companylogo: "./assets/images/movementforlifelogo.png", // Changed to relative path
+											date: "August 2021 – September 2022",
+											desc: "Assisted in guiding patients through specific exercises and routines designed for their recovery.",
+											descBullets: [
+												"Assisted in managing patient data and electronic health records (EHR) systems, demonstrating attention to detail and familiarity with handling sensitive information.",
+												"Collaborated with a multidisciplinary team to support the development and implementation of customized treatment plans, showcasing teamwork and communication skills."
+											]
+										},
+										{
+											role: "Food Staff",
+											company: "Fish's Wild Island Grill",
+											companylogo: "./assets/images/fishswildlogo.png", // Changed to relative path
+											date: "August 2019 – March 2020",
+											desc: "Enhanced multitasking abilities, managing multiple orders and customer requests efficiently.",
+											descBullets: [
+												"Operated point-of-sale systems and cash registers with accuracy, showcasing proficiency in handling financial transactions.",
+												"Adapted to diverse customer needs and preferences, demonstrating flexibility and a customer-centric mindset."
+											]
+										}
+									]
+								};
+
+								const workExperiencesContent = document.getElementById('work-experiences-content');
+
+								if (workExperiences.display) {
+									workExperiences.experience.forEach(exp => {
+										const expElement = document.createElement('div');
+										expElement.innerHTML = `
+											<h3>${exp.role} at ${exp.company}</h3>
+											<img src="${exp.companylogo}" alt="${exp.company} Logo" />
+											<p><strong>${exp.date}</strong><br>${exp.desc}</p>
+											<ul>
+												${exp.descBullets.map(bullet => `<li>${bullet}</li>`).join('')}
+											</ul>
+										`;
+
+										workExperiencesContent.appendChild(expElement);
+									});
+								}
+							</script>
 
 						<!-- Contact -->
 							<article id="contact">
@@ -91,9 +244,8 @@
 									</ul>
 								</form>
 								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="#" class="icon brands fa-angellist"><span class="label">WellFound</span></a></li>
 									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
