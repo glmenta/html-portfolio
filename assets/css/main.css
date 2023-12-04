@@ -32,6 +32,12 @@ body {
 	line-height: 1;
 }
 
+.gek-logo {
+	width: 112px;
+	height: 113px;
+	border-radius: 50px;
+	position: relative;
+}
 ol, ul {
 	list-style: none;
 }
